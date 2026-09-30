@@ -44,10 +44,11 @@ export const site = {
     facebook: 'https://www.facebook.com/search/top?q=Barrio%20Fiesta%20Mexican%20Grill%20Tuscaloosa',
   },
   /**
-   * Order Online — leave empty to hide the button.
+   * Order Online — when empty, links to the locked /order.html page.
    * When ready, set e.g. DoorDash URL: 'https://www.doordash.com/...'
    */
   orderOnlineUrl: '',
+  orderPageUrl: '/order.html',
   seo: {
     title: 'Barrio Fiesta Mexican Grill | Mexican Restaurant in Tuscaloosa, AL',
     description:

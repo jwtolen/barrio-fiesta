@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menu | Barrio Fiesta Mexican Grill — Tuscaloosa, AL</title>
+    <title>Order Online | Barrio Fiesta Mexican Grill — Coming Soon</title>
     <meta
       name="description"
-      content="Browse the Barrio Fiesta menu in Tuscaloosa — lunch specials, fajitas, quesabirria, street tacos, margaritas, cocktails and more at 500 14th Street."
+      content="Online ordering for Barrio Fiesta Mexican Grill in Tuscaloosa is coming soon. Call us or visit 500 14th Street for dine-in."
     />
-    <link rel="canonical" href="https://barriofiesta.com/menu.html" />
+    <meta name="robots" content="noindex" />
     <meta name="theme-color" content="#1A1410" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,30 +18,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/src/css/main.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Menu",
-        "name": "Barrio Fiesta Mexican Grill Menu",
-        "hasMenuSection": [
-          { "@type": "MenuSection", "name": "Lunch Specials" },
-          { "@type": "MenuSection", "name": "Fajita Specials" },
-          { "@type": "MenuSection", "name": "Margaritas" }
-        ],
-        "provider": {
-          "@type": "Restaurant",
-          "name": "Barrio Fiesta Mexican Grill",
-          "telephone": "+12057377087",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "500 14th Street",
-            "addressLocality": "Tuscaloosa",
-            "addressRegion": "AL",
-            "postalCode": "35404"
-          }
-        }
-      }
-    </script>
   </head>
   <body>
     <a class="sr-only" href="#main">Skip to content</a>
@@ -55,7 +31,6 @@
         <nav class="nav-links" aria-label="Primary">
           <a href="/" data-nav="home">Home</a>
           <a href="/menu.html" data-nav="menu">Menu</a>
-          <a href="/order.html" data-order-online data-nav="order">Order Online</a>
           <a href="/#margaritas">Margaritas</a>
           <a href="/#about">About</a>
           <a href="/#visit">Visit</a>
@@ -75,7 +50,7 @@
     <div class="nav-panel" id="nav-panel" hidden>
       <a href="/">Home</a>
       <a href="/menu.html">Menu</a>
-      <a href="/order.html" data-order-online>Order Online</a>
+      <a href="/order.html" data-nav="order">Order Online</a>
       <a href="/#margaritas">Margaritas</a>
       <a href="/#about">About</a>
       <a href="/#visit">Visit</a>
@@ -86,35 +61,33 @@
     </div>
 
     <main id="main">
-      <section class="page-hero">
-        <div class="container">
-          <p class="eyebrow" style="color: var(--yellow)">Barrio Fiesta · Tuscaloosa</p>
-          <h1>THE MENU</h1>
-          <p>
-            Lunch specials, sizzling fajitas, quesabirria, street tacos, margaritas and more.
-            Prices are easy to update — ask your server for today’s specials.
-          </p>
-          <div class="btn-row">
-            <a class="btn btn-yellow" href="#lunch">Lunch Specials</a>
-            <a class="btn btn-ghost" href="#margaritas">Margaritas</a>
-            <a class="btn btn-ghost" href="/menu.pdf" id="original-menu-link">View Original Menu</a>
+      <section class="order-locked" aria-labelledby="order-heading">
+        <div class="container order-locked-inner reveal">
+          <div class="order-lock-badge" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
           </div>
-          <p style="margin-top: 1rem; color: rgba(247,241,232,0.55); font-size: 0.9rem">
-            <span class="hours-today" data-hours-today style="background: rgba(255,255,255,0.08); color: var(--cream)"></span>
+          <p class="eyebrow" style="color: var(--yellow)">Extra feature</p>
+          <h1 id="order-heading">ORDER ONLINE<br /><span>LOCKED</span></h1>
+          <p class="order-locked-lead">
+            Online ordering is under construction — an upgrade we’re building for Barrio Fiesta.
+            In the meantime, grab a table, call ahead, or swing by for lunch and dinner.
+          </p>
+          <div class="order-locked-meta">
+            <span class="hours-today" data-hours-today></span>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-yellow" href="/menu.html">View the Menu</a>
+            <a class="btn btn-ghost" data-phone-href href="tel:+12057377087">Call <span data-phone-display>(205) 737-7087</span></a>
+            <a class="btn btn-ghost" data-directions href="#">Get Directions</a>
+          </div>
+          <p class="order-locked-note">
+            When ordering goes live, this page will unlock with your preferred delivery partner.
           </p>
         </div>
       </section>
-
-      <div class="container menu-layout">
-        <nav class="menu-nav" data-menu-nav aria-label="Menu categories"></nav>
-        <div>
-          <div class="menu-sections" data-menu-sections></div>
-          <p class="menu-pdf-note">
-            Prefer the printed version?
-            <a href="/menu.pdf" style="color: var(--coral); font-weight: 650; text-decoration: underline">View Original Menu (PDF)</a>
-          </p>
-        </div>
-      </div>
     </main>
 
     <footer class="site-footer">
@@ -143,13 +116,12 @@
             <a href="/#margaritas">Margaritas</a>
             <a href="/#lunch">Lunch Specials</a>
             <a href="/#about">About</a>
-            <a href="/#gameday">Game Day</a>
-            <a data-order-online href="/order.html">Order Online</a>
+            <a href="/order.html">Order Online</a>
           </div>
         </div>
         <div class="footer-bottom">
           <span>© <span id="year"></span> Barrio Fiesta Mexican Grill</span>
-          <span>Mexican food · Margaritas · Tuscaloosa, AL</span>
+          <span>Online ordering coming soon</span>
         </div>
       </div>
     </footer>
@@ -172,6 +144,6 @@
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-    <script type="module" src="/src/js/menu.js"></script>
+    <script type="module" src="/src/js/order.js"></script>
   </body>
 </html>

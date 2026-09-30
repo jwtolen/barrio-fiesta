@@ -33,7 +33,7 @@
   --font-body: 'Outfit', system-ui, sans-serif;
 
   /* Layout */
-  --nav-h: 78px;
+  --nav-h: 84px;
   --mobile-bar-h: 68px;
   --container: 1180px;
   --radius: 18px;
@@ -323,8 +323,24 @@ ul {
 }
 
 .logo img {
-  height: 48px;
+  height: 58px;
   width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.site-footer .logo img {
+  height: 72px;
+}
+
+@media (max-width: 640px) {
+  .logo img {
+    height: 48px;
+  }
+
+  .site-footer .logo img {
+    height: 64px;
+  }
 }
 
 .logo-text {
@@ -2075,6 +2091,85 @@ ul {
 .hours-today.is-closed {
   background: rgba(230, 57, 70, 0.12);
   color: var(--coral-deep);
+}
+
+/* --------------------------------------------------------------------------
+   Order Online — locked / coming soon
+   -------------------------------------------------------------------------- */
+
+.order-locked {
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  padding: calc(var(--nav-h) + 3rem) 0 calc(4rem + var(--mobile-bar-h));
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(230, 57, 70, 0.18), transparent 45%),
+    radial-gradient(ellipse at 85% 70%, rgba(245, 197, 24, 0.12), transparent 40%),
+    var(--ink);
+  color: var(--cream);
+}
+
+.order-locked-inner {
+  max-width: 40rem;
+}
+
+.order-lock-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.25rem;
+  background: rgba(245, 197, 24, 0.12);
+  border: 1px solid rgba(245, 197, 24, 0.35);
+  color: var(--yellow);
+}
+
+.order-locked h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 9vw, 5rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  margin: 0.55rem 0 1.15rem;
+}
+
+.order-locked h1 span {
+  color: var(--yellow);
+}
+
+.order-locked-lead {
+  color: rgba(247, 241, 232, 0.78);
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  max-width: 34rem;
+}
+
+.order-locked-meta {
+  margin-bottom: 1.75rem;
+}
+
+.order-locked-meta .hours-today {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--cream);
+}
+
+.order-locked-note {
+  margin-top: 1.75rem;
+  font-size: 0.92rem;
+  color: rgba(247, 241, 232, 0.5);
+  max-width: 30rem;
+}
+
+@media (max-width: 640px) {
+  .order-locked .btn-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .order-locked .btn-row .btn {
+    width: 100%;
+  }
 }
 
 /* Utility */

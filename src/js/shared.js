@@ -38,12 +38,8 @@ export function bindSharedChrome(active = 'home') {
   });
 
   document.querySelectorAll('[data-order-online]').forEach((el) => {
-    if (!site.orderOnlineUrl) {
-      el.classList.add('hidden');
-    } else {
-      el.setAttribute('href', site.orderOnlineUrl);
-      el.classList.remove('hidden');
-    }
+    el.classList.remove('hidden');
+    el.setAttribute('href', site.orderOnlineUrl || site.orderPageUrl || '/order.html');
   });
 
   document.querySelectorAll('[data-phone-display]').forEach((el) => {
