@@ -2067,11 +2067,18 @@ ul {
     padding-inline: 1.25rem;
     gap: 0.4rem;
     border-bottom: 1px solid rgba(26, 20, 16, 0.08);
+    /* Keep chips from jumping under hash scroll */
+    scroll-margin-top: var(--nav-h);
   }
   .menu-nav a {
     white-space: nowrap;
     background: var(--white);
     border: 1px solid rgba(26, 20, 16, 0.08);
+  }
+
+  .menu-section {
+    /* Account for sticky site header + sticky category chips */
+    scroll-margin-top: calc(var(--nav-h) + 4.5rem);
   }
 }
 

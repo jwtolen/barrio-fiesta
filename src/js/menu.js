@@ -16,6 +16,33 @@ function escapeHtml(str) {
     .replaceAll('"', '&quot;');
 }
 
+function getStickyOffset() {
+  const header = document.querySelector('.site-header');
+  const menuNav = document.querySelector('[data-menu-nav]');
+  const headerH = header ? header.getBoundingClientRect().height : 84;
+  const navH = menuNav ? menuNav.getBoundingClientRect().height : 0;
+  // Extra breathing room so the section title isn't flush under the chips
+  return headerH + navH + 12;
+}
+
+function openSection(section) {
+  if (!section) return;
+  section.classList.add('is-open');
+  const btn = section.querySelector('.menu-section-toggle');
+  if (btn) btn.setAttribute('aria-expanded', 'true');
+}
+
+function scrollToSection(section) {
+  if (!section) return;
+  openSection(section);
+
+  // Wait a frame so opened content doesn't shift the target mid-scroll
+  requestAnimationFrame(() => {
+    const top = window.scrollY + section.getBoundingClientRect().top - getStickyOffset();
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  });
+}
+
 function renderMenu() {
   const nav = document.querySelector('[data-menu-nav]');
   const sections = document.querySelector('[data-menu-sections]');
@@ -63,6 +90,20 @@ function renderMenu() {
   });
 
   const links = [...nav.querySelectorAll('a')];
+
+  links.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const id = link.getAttribute('href')?.slice(1);
+      const section = id ? document.getElementById(id) : null;
+      if (!section) return;
+
+      event.preventDefault();
+      links.forEach((l) => l.classList.toggle('is-active', l === link));
+      scrollToSection(section);
+      history.replaceState(null, '', `#${id}`);
+    });
+  });
+
   const obs = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -72,12 +113,23 @@ function renderMenu() {
         );
       });
     },
-    { rootMargin: '-30% 0px -55% 0px', threshold: 0.01 }
+    { rootMargin: '-35% 0px -50% 0px', threshold: 0.01 }
   );
   menuCategories.forEach((c) => {
     const el = document.getElementById(c.id);
     if (el) obs.observe(el);
   });
+
+  // Deep link support: /menu.html#margaritas
+  const hash = window.location.hash.slice(1);
+  if (hash) {
+    const target = document.getElementById(hash);
+    if (target) {
+      // Instant open, then scroll after layout
+      openSection(target);
+      setTimeout(() => scrollToSection(target), 50);
+    }
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
