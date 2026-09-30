@@ -1051,6 +1051,8 @@ ul {
   letter-spacing: -0.03em;
   margin: 0.6rem 0 1.25rem;
   max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
 }
 
 .margaritas-copy p {
@@ -1080,6 +1082,7 @@ ul {
 @media (max-width: 860px) {
   .margaritas {
     overflow: visible;
+    padding-inline: 0;
   }
 
   .margaritas-grid {
@@ -1091,9 +1094,20 @@ ul {
     order: -1;
   }
 
+  .margaritas-copy {
+    min-width: 0;
+  }
+
   .margaritas-copy h2 {
-    font-size: clamp(2.15rem, 10vw, 2.75rem);
-    letter-spacing: -0.04em;
+    font-size: min(9vw, 1.95rem);
+    letter-spacing: -0.045em;
+    line-height: 0.95;
+  }
+}
+
+@media (max-width: 400px) {
+  .margaritas-copy h2 {
+    font-size: min(8.2vw, 1.7rem);
   }
 }
 
