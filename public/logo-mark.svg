@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Barrio Fiesta">
+  <defs>
+    <linearGradient id="sun2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5C518"/>
+      <stop offset="100%" stop-color="#E8A317"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#sun2)"/>
+  <path d="M28 66c10-26 34-40 62-40 8 0 16 2 22 5-8 5-18 10-30 12-22 5-42 10-54 23z" fill="#E63946"/>
+  <path d="M24 78c16-10 36-14 56-14s36 4 52 12c-12 16-32 30-54 30S36 96 24 78z" fill="#1FA8A0"/>
+  <path d="M40 42c8-5 16-7 26-6 4 10 2 22-2 30-10-5-18-12-24-24z" fill="#8BC34A"/>
+  <path d="M78 44c10 2 16 10 20 18-10 5-20 7-30 5 0-10 2-16 10-23z" fill="#F5C518"/>
+</svg>

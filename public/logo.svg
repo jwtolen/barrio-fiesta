@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" role="img" aria-label="Barrio Fiesta Mexican Grill">
+  <defs>
+    <linearGradient id="sun" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5C518"/>
+      <stop offset="100%" stop-color="#E8A317"/>
+    </linearGradient>
+  </defs>
+  <!-- Colorful hand-painted style mark -->
+  <g transform="translate(12,18)">
+    <circle cx="52" cy="52" r="50" fill="url(#sun)" opacity="0.95"/>
+    <path d="M22 58c8-22 28-34 52-34 10 0 20 2 28 7-6 4-14 8-24 10-18 4-36 8-56 17z" fill="#E63946"/>
+    <path d="M18 72c14-8 30-12 48-12s32 3 46 10c-10 14-28 28-48 28S28 88 18 72z" fill="#1FA8A0"/>
+    <path d="M34 38c6-4 14-6 22-5 3 8 2 18-2 26-8-4-16-10-20-21z" fill="#8BC34A"/>
+    <path d="M70 40c8 2 14 8 18 16-8 4-18 6-26 4 0-8 2-14 8-20z" fill="#F5C518"/>
+    <circle cx="52" cy="52" r="46" fill="none" stroke="#1A1410" stroke-width="3" opacity="0.15"/>
+  </g>
+  <g fill="#1A1410" font-family="Georgia, 'Times New Roman', serif">
+    <text x="130" y="72" font-size="42" font-weight="700" letter-spacing="1">BARRIO FIESTA</text>
+    <text x="132" y="104" font-size="15" font-weight="600" letter-spacing="4" font-family="Arial, Helvetica, sans-serif" fill="#E63946">MEXICAN GRILL</text>
+  </g>
+  <g transform="translate(130,118)">
+    <rect x="0" y="0" width="28" height="4" rx="2" fill="#F5C518"/>
+    <rect x="34" y="0" width="28" height="4" rx="2" fill="#E63946"/>
+    <rect x="68" y="0" width="28" height="4" rx="2" fill="#1FA8A0"/>
+    <rect x="102" y="0" width="28" height="4" rx="2" fill="#8BC34A"/>
+  </g>
+</svg>
