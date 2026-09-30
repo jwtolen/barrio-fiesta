@@ -6,6 +6,8 @@ export function bindSharedChrome(active = 'home') {
   const toggle = document.querySelector('.nav-toggle');
   const panel = document.querySelector('.nav-panel');
 
+  if (panel) panel.removeAttribute('hidden');
+
   const onScroll = () => {
     if (!header) return;
     header.classList.toggle('is-scrolled', window.scrollY > 24);
@@ -18,12 +20,14 @@ export function bindSharedChrome(active = 'home') {
       const open = panel.classList.toggle('is-open');
       toggle.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('nav-open', open);
       document.body.style.overflow = open ? 'hidden' : '';
     });
     panel.querySelectorAll('a').forEach((a) => {
       a.addEventListener('click', () => {
         panel.classList.remove('is-open');
         toggle.classList.remove('is-open');
+        document.body.classList.remove('nav-open');
         document.body.style.overflow = '';
       });
     });
