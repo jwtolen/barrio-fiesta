@@ -33,7 +33,7 @@
   --font-body: 'Outfit', system-ui, sans-serif;
 
   /* Layout */
-  --nav-h: 84px;
+  --nav-h: 104px;
   --mobile-bar-h: 68px;
   --container: 1180px;
   --radius: 18px;
@@ -323,23 +323,27 @@ ul {
 }
 
 .logo img {
-  height: 58px;
+  height: 88px;
   width: auto;
   display: block;
   object-fit: contain;
 }
 
 .site-footer .logo img {
-  height: 72px;
+  height: 96px;
 }
 
 @media (max-width: 640px) {
+  :root {
+    --nav-h: 88px;
+  }
+
   .logo img {
-    height: 48px;
+    height: 72px;
   }
 
   .site-footer .logo img {
-    height: 64px;
+    height: 80px;
   }
 }
 
